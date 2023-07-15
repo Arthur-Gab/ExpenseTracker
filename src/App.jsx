@@ -1,7 +1,7 @@
 import "./App.css";
 import "./normalize.css";
-import Expenses from "./components/Expense/Expenses";
-import NewExpense from "./components/NewExpense/NewExpense";
+import Expenses from "./components/Expense";
+import NewExpense from "./components/NewExpense";
 
 const EXPENSES = [
 	{
