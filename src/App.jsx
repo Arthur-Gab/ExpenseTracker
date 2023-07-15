@@ -20,7 +20,7 @@ const EXPENSES = [
 		id: 3,
 		title: "Tomato",
 		amount: 5.5,
-		date: new Date(2021, 8, 1),
+		date: new Date(2019, 8, 1),
 	},
 	{
 		id: 4,

@@ -1,8 +1,20 @@
+import { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
+import ExpenseFilter from "./ExpenseFilter";
 import "./Expenses.css";
 
 export default function Expenses({ onExpenseList }) {
-	const expenseListItem = onExpenseList.map((expense) => (
+	const [filteredYear, setFilteredYear] = useState("2022");
+
+	function handlerOnChangeFilter(selectedYear) {
+		setFilteredYear(selectedYear);
+	}
+
+	const expenseListFiltered = onExpenseList.filter((expense) => {
+		return expense.date.getFullYear().toString() === filteredYear;
+	});
+
+	const expenseListItem = expenseListFiltered.map((expense) => (
 		<ExpenseItem
 			key={expense.id}
 			date={expense.date}
@@ -11,5 +23,13 @@ export default function Expenses({ onExpenseList }) {
 		/>
 	));
 
-	return <div className="expenses">{expenseListItem}</div>;
+	return (
+		<div className="expenses">
+			<ExpenseFilter
+				selectedYear={filteredYear}
+				onChangeFilter={handlerOnChangeFilter}
+			/>
+			{expenseListItem}
+		</div>
+	);
 }
