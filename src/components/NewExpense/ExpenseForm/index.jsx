@@ -1,17 +1,17 @@
 import "./ExpenseForm.css";
 import { useState } from "react";
 
-export default function ExpenseForm({ onSaveExpenseData }) {
+export default function ExpenseForm({ saveExpenseData }) {
 	const [expense, setExpense] = useState({
 		title: "",
 		amount: "",
 		date: "",
 	});
 
+	// Atualizar os valores da expense com base no title do input
 	function handlerChange(e) {
-		setExpense({
-			...expense,
-			[e.target.name]: e.target.value,
+		setExpense((prevExpense) => {
+			return { ...prevExpense, [e.target.name]: e.target.value };
 		});
 	}
 
@@ -30,7 +30,7 @@ export default function ExpenseForm({ onSaveExpenseData }) {
 		};
 
 		// Send expense data to NewExpense.jsx
-		onSaveExpenseData(expenseData);
+		saveExpenseData(expenseData);
 
 		setExpense({
 			title: "",

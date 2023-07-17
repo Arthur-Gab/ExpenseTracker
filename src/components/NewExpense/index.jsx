@@ -1,19 +1,19 @@
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
-export default function NewExpense({ onExpenseDataPush }) {
-	function handlerSaveExpense(expenseDataEntered) {
+export default function NewExpense({ expenseDataPush, nextID }) {
+	function handlerSaveExpenseData(expenseDataEntered) {
 		const expenseData = {
+			id: nextID,
 			...expenseDataEntered,
-			id: Math.random().toString(),
 		};
 		// Sand expense data to App.jsx
-		onExpenseDataPush(expenseData);
+		expenseDataPush(expenseData);
 	}
 
 	return (
 		<div className="new-expense">
-			<ExpenseForm onSaveExpenseData={handlerSaveExpense} />
+			<ExpenseForm saveExpenseData={handlerSaveExpenseData} />
 		</div>
 	);
 }
