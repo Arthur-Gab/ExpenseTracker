@@ -1,7 +1,7 @@
 import "./ExpenseForm.css";
 import { useState } from "react";
 
-export default function ExpenseForm({ saveExpenseData }) {
+export default function ExpenseForm({ saveExpenseData, isOpen }) {
 	const [expense, setExpense] = useState({
 		title: "",
 		amount: "",
@@ -32,11 +32,19 @@ export default function ExpenseForm({ saveExpenseData }) {
 		// Send expense data to NewExpense.jsx
 		saveExpenseData(expenseData);
 
+		handlerCleanForm();
+	}
+
+	/* Limpar as entradas do formulário 
+	e focar no title para criar outra despesa mais rápidamente*/
+	function handlerCleanForm() {
 		setExpense({
 			title: "",
 			amount: "",
 			date: "",
 		});
+
+		document.querySelector("#title").focus();
 	}
 
 	return (
@@ -50,6 +58,7 @@ export default function ExpenseForm({ saveExpenseData }) {
 						name="title"
 						onChange={handlerChange}
 						value={expense.title}
+						autoFocus
 						required
 					/>
 				</div>
@@ -63,6 +72,7 @@ export default function ExpenseForm({ saveExpenseData }) {
 						min={0.01}
 						step={0.01}
 						value={expense.amount}
+						required
 					/>
 				</div>
 				<div className="new-expense__control">
@@ -75,10 +85,15 @@ export default function ExpenseForm({ saveExpenseData }) {
 						min={`2019-01-01`}
 						max={`2022-12-31`}
 						value={expense.date}
+						required
 					/>
 				</div>
 			</div>
 			<div className="new-expense__actions">
+				{/* Close the form */}
+				<button type="button" onClick={isOpen}>
+					Cancel
+				</button>
 				<button type="submit">Add Expense</button>
 			</div>
 		</form>

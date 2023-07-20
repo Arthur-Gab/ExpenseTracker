@@ -35,7 +35,17 @@ export default function Expenses({ expenseList }) {
 				selectedYear={filteredYear}
 				onChangeFilter={handlerOnChangeFilter}
 			/>
-			{expenseListItem}
+			<ul className="expenses-list">
+				{/* Retonar uma msg de feedback caso não exista despesas no filtro selecionado
+				Caso contrário, retornar as despesas filtradas */}
+				{expenseListItem.length === 0 ? (
+					<h2 className="expenses-list__fallback">
+						Não existem despesas nesse ano
+					</h2>
+				) : (
+					expenseListItem
+				)}
+			</ul>
 		</div>
 	);
 }
