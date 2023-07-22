@@ -26,6 +26,8 @@ export default function ExpenseForm({ saveExpenseData, isOpen }) {
 		// console.log(day); 01
 		const expenseData = {
 			...expense,
+			// Trasnformar a string em number
+			amount: parseFloat(expense.amount),
 			date: new Date(year, month - 1, day),
 		};
 

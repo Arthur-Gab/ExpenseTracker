@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpenseChart from "./ExpenseChart";
 import "./Expenses.css";
 
 // Mostrar despesas com base no ano selecionado
@@ -35,6 +36,7 @@ export default function Expenses({ expenseList }) {
 				selectedYear={filteredYear}
 				onChangeFilter={handlerOnChangeFilter}
 			/>
+			<ExpenseChart expenseListFiltered={expenseListFiltered} />
 			<ul className="expenses-list">
 				{/* Retonar uma msg de feedback caso não exista despesas no filtro selecionado
 				Caso contrário, retornar as despesas filtradas */}
