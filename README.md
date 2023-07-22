@@ -1,6 +1,6 @@
 # ExpenseTracker
 
-*An exercise for practice react* 
+*An exercise for practice react.* 
 
 This application has the purpose of registering expenses and being able to visualize them according to the year selected as a filter. 
 
@@ -26,3 +26,4 @@ This application has the purpose of registering expenses and being able to visua
 
 ![ET Form](https://github.com/Arthur-Gab/ExpenseTracker/assets/89430618/a4aaeee5-d9c8-4eda-86dd-c50630745cd9)
 
+*This project is available in the Udemy course: React - The Complete Guide 2023 (incl. React Router & Redux) by Academind by Maximilian Schwarzmüller and Maximilian Schwarzmüller*
