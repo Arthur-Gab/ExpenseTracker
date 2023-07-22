@@ -15,7 +15,8 @@ This application has the purpose of registering expenses and being able to visua
 
 >It shows all expenses for the year, as well as the name of the object that was purchased, such as Rice, its price - "spent" - and the date it was created. The first expense created appears in 1st place in the list and the subsequent expenses below it.
 
-![ET Form](https://github.com/Arthur-Gab/ExpenseTracker/assets/89430618/74f6571e-520a-43b4-ac05-6f8f2977178c)
+![ET Visualization](https://github.com/Arthur-Gab/ExpenseTracker/assets/89430618/049428de-d88d-40e9-a570-1075066eb5cf)
+
 
 ### Creating Expenses
 
@@ -23,4 +24,5 @@ This application has the purpose of registering expenses and being able to visua
 
 - With the form being displayed, all that remains is to fill in the data, the title, price and date and click on "Add Expense".
 
-![ET Form](https://github.com/Arthur-Gab/ExpenseTracker/assets/89430618/63620771-d8a4-4f4e-a027-c4473ef1a28d)
+![ET Form](https://github.com/Arthur-Gab/ExpenseTracker/assets/89430618/a4aaeee5-d9c8-4eda-86dd-c50630745cd9)
+
